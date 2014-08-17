@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depot</title>
+  <title>Pragrop Booksカタログ</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>' >
-
-<%= yield %>
-
-</body>
-</html>
+	<div id="banner">
+		<%= image_tag("logo.png") %>
+		<%= @page_title || "Pragmatic Bookshelf" %>
+	</div>
+	<div id="columns">
+    <div id="side">
+      <div id="cart">
+        <%= render @cart %>
+      </div>
+			<ul>
+				<li><%= Time.now %></li>
+				<li><a href="product">ホーム</a></li>
+				<li><a href="#">よくある質問</a></li>
+				<li><a href="#">ニュース</a></li>
+				<li><a href="#">お問い合わせ</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<%= yield %>
+			</div>
+		</html>
