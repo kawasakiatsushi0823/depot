@@ -1,3 +1,4 @@
+<!--テストテスト-->
 <% if notice %>
 	<p id="notice"><%= notice %></p>
 <% end %>
@@ -11,6 +12,7 @@
 			<div class="price_line">
         <span class="price"><%= number_to_currency(product.price) %></span>
         <%= button_to 'カートに入れる', line_items_path(product_id: product), remote: true %>
+        <%#TODO= button_to 'カートから削除', line_items_path(), method: :decrement %>
 			</div>
 		</div>
 <% end %>
